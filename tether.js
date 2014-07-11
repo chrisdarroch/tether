@@ -1,17 +1,6 @@
 /*! tether 0.6.5 */
-
-
-(function(root, factory) {
-  if (typeof define === 'function' && define.amd) {
-    define(factory);
-  } else if (typeof exports === 'object') {
-    module.exports = factory(require,exports,module);
-  } else {
-    root.Tether = factory();
-  }
-}(this, function(require,exports,module) {
-
-(function() {
+(function(root) {
+	(function() {
   var Evented, addClass, defer, deferred, extend, flush, getBounds, getOffsetParent, getOrigin, getScrollBarSize, getScrollParent, hasClass, node, removeClass, uniqueId, updateClasses, zeroPosCache,
     __hasProp = {}.hasOwnProperty,
     __indexOf = [].indexOf || function(item) { for (var i = 0, l = this.length; i < l; i++) { if (i in this && this[i] === item) return i; } return -1; },
@@ -1438,6 +1427,12 @@
 
 }).call(this);
 
-return this.Tether;
 
-}));
+	root.Tether = this.Tether;
+
+	if (typeof define === 'function') {
+		define([],function() {
+			return root.Tether;
+		});
+	}
+}(this));
