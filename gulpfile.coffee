@@ -5,7 +5,7 @@ concat = require('gulp-concat')
 uglify = require('gulp-uglify')
 header = require('gulp-header')
 rename = require('gulp-rename')
-wrap = require('gulp-wrap-umd')
+wrap = require('gulp-wrap')
 
 pkg = require('./package.json')
 banner = "/*! #{ pkg.name } #{ pkg.version } */\n"
@@ -26,10 +26,12 @@ gulp.task 'coffee', ->
 gulp.task 'concat', ->
   gulp.src(['./js/utils.js', './js/tether.js', './js/constraint.js', './js/abutment.js', './js/shift.js'])
     .pipe(concat('tether.js'))
-    .pipe(wrap(
+    .pipe(wrap({
+      src: 'amd.txt'
+    },{
       namespace: 'Tether'
       exports: 'this.Tether'
-    ))
+    }))
     .pipe(header(banner))
     .pipe(gulp.dest('./'))
 

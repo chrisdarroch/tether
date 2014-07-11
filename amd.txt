@@ -1,0 +1,11 @@
+(function(root) {
+	<%= contents %>
+
+	root.<%= namespace %> = <%= exports %>;
+
+	if (typeof define === 'function') {
+		define([],function() {
+			return root.<%= namespace %>;
+		});
+	}
+}(this));
