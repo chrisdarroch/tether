@@ -27,7 +27,7 @@ gulp.task 'concat', ->
   gulp.src(['./js/utils.js', './js/tether.js', './js/constraint.js', './js/abutment.js', './js/shift.js'])
     .pipe(concat('tether.js'))
     .pipe(wrap({
-      src: 'amd.txt'
+      src: 'umd.txt'
     },{
       namespace: 'Tether'
       exports: 'this.Tether'

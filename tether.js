@@ -1434,5 +1434,7 @@
 		define([],function() {
 			return root.Tether;
 		});
+	} else if (typeof exports === 'object') {
+		module.exports = root.Tether;
 	}
 }(this));
