@@ -1,4 +1,4 @@
-/*! tether 1.3.3 */
+/*! @atlassian/tether 1.3.4 */
 
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
