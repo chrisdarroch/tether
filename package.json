@@ -20,7 +20,8 @@
     "url": "https://github.com/atlassian/tether.git"
   },
   "publishConfig": {
-    "registry": "registry.npmjs.org"
+    "registry": "registry.npmjs.org",
+    "access": "public"
   },
   "license": "MIT",
   "main": "dist/js/tether.js",
